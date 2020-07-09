@@ -5,22 +5,22 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * HTML View class for the Agenda Component
  *
- * @since  0.0.1
+ * @since  0.0.6
  */
-class AgendaViewAgendaItems extends JViewLegacy
+class AgendaViewAgendaSpeakers extends JViewLegacy
 {
     /**
-     * Display the main Agenda view
+     * Display the Agenda Speakers List view
      *
      * @param string $tpl The name of the template file to parse; automatically searches through the template paths.
      *
      * @return  void
      *
-     * @since 1.6
+     * @since 0.0.6
      */
     public function display($tpl = null)
     {
-        $this->msg = $this->get('Msg');
+        $this->viewTitle = JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_SPEAKERS');
 
         // Get data from the model
         $this->items		= $this->get('Items');
@@ -48,9 +48,9 @@ class AgendaViewAgendaItems extends JViewLegacy
      */
     protected function addToolBar()
     {
-        JToolbarHelper::title(JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_ITEMS'));
-        JToolbarHelper::addNew('agendaitem.add');
-        JToolbarHelper::editList('agendaitem.edit');
-        JToolbarHelper::deleteList('Wirklich löschen?', 'agendaitem.delete');
+        JToolbarHelper::title(JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_SPEAKERS'));
+        JToolbarHelper::addNew('agendaspeaker.add');
+        JToolbarHelper::editList('agendaspeaker.edit');
+        JToolbarHelper::deleteList('Wirklich löschen?', 'agendaspeaker.delete');
     }
 }
