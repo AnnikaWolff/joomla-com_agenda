@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 
-class AgendaModelAgendaItem extends JModelAdmin
+class AgendaModelAgendaSpeaker extends JModelAdmin
 {
     /**
      * Method to get a table object, load it if necessary.
@@ -14,7 +14,7 @@ class AgendaModelAgendaItem extends JModelAdmin
      *
      * @since   1.6
      */
-    public function getTable($type = 'AgendaItems', $prefix = 'AgendaTable', $config = [])
+    public function getTable($type = 'AgendaSpeakers', $prefix = 'AgendaTable', $config = [])
     {
         return JTable::getInstance($type, $prefix, []);
     }
@@ -32,8 +32,8 @@ class AgendaModelAgendaItem extends JModelAdmin
     public function getForm($data = array(), $loadData = true)
     {
         $form = $this->loadForm(
-            'com_agenda.agendaitem',
-            'agendaitem',
+            'com_agenda.agendaspeaker',
+            'agendaspeaker',
             array(
                 'control' => 'jform',
                 'load_data' => $loadData
@@ -61,7 +61,7 @@ class AgendaModelAgendaItem extends JModelAdmin
     {
         // Check the session for previously entered form data.
         $data = JFactory::getApplication()->getUserState(
-            'com_agenda.edit.agendaitem.data',
+            'com_agenda.edit.agendaspeaker.data',
             array()
         );
 

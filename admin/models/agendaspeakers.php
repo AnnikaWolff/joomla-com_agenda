@@ -2,17 +2,17 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * AgendaItemsList Model
+ * AgendaSpeakersList Model
  *
- * @since  0.0.1
+ * @since  0.0.6
  */
-class AgendaModelAgendaItems extends JModelList
+class AgendaModelAgendaSpeakers extends JModelList
 {
     /**
      * Method to build an SQL query to load the list data.
      *
      * @return      string  An SQL query
-     * @since  0.0.1
+     * @since  0.0.6
      */
     protected function getListQuery()
     {
@@ -21,7 +21,7 @@ class AgendaModelAgendaItems extends JModelList
 
         // Create the base select statement.
         $query->select('*')
-            ->from($db->quoteName('#__nexus_agenda_items'));
+            ->from($db->quoteName('#__nexus_agenda_speakers'));
 
         return $query;
     }

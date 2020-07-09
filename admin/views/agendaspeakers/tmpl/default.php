@@ -21,26 +21,23 @@ defined('_JEXEC') or die('Restricted Access');
 <div id="j-main-container" class="j-toggle-main j-toggle-transition span10">
     <h1><?php echo $this->viewTitle; ?></h1>
 
-    <form action="index.php?option=com_agenda&view=agendaitems" method="post" id="adminForm" name="adminForm">
+    <form action="index.php?option=com_agenda&view=agenda" method="post" id="adminForm" name="adminForm">
         <table class="table table-striped table-hover">
             <thead>
             <tr>
                 <th><?php echo JHtml::_('grid.checkall'); ?></th>
-                <th><?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_ID'); ?></th>
+                <th><?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_ID'); ?></th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_TITLE'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_TITLE'); ?>
                 </th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_SPEAKER'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_COMPANY'); ?>
                 </th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_PLACE'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_HAS_DESC'); ?>
                 </th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_DAY'); ?>
-                </th>
-                <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_TIME'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_HAS_PORTRAIT'); ?>
                 </th>
                 <th>
                     <?php echo JText::_('COM_AGENDA_PUBLISHED'); ?>
@@ -57,7 +54,7 @@ defined('_JEXEC') or die('Restricted Access');
             <tbody>
             <?php if (! empty($this->items)) : ?>
                 <?php foreach ($this->items as $i => $row) :
-                    $link = JRoute::_('index.php?option=com_agenda&task=agendaitem.edit&id=' . $row->id);
+                    $link = JRoute::_('index.php?option=com_agenda&task=agendaspeaker.edit&id=' . $row->id);
                     ?>
 
                     <tr>
@@ -70,10 +67,19 @@ defined('_JEXEC') or die('Restricted Access');
                                 <?php echo $row->title; ?>
                             </a>
                         </td>
-                        <td><?php echo $row->speaker; ?></td>
-                        <td><?php echo $row->place; ?></td>
-                        <td><?php echo $row->day; ?></td>
-                        <td><?php echo $row->time; ?></td>
+                        <td><?php echo $row->company; ?></td>
+                        <td><?php
+                                echo (!empty($row->description) && $row->description !== null)
+                                    ? JText::_('COM_AGENDA_YES')
+                                    : JText::_('COM_AGENDA_NO');
+                            ?>
+                        </td>
+                        <td><?php
+                                echo (!empty($row->portrait) && $row->portrait !== null)
+                                    ? JText::_('COM_AGENDA_YES')
+                                    : JText::_('COM_AGENDA_NO');
+                            ?>
+                        </td>
                         <td align="center">
                             <?php echo JHtml::_('jgrid.published', $row->published, $i, 'agenda.', true, 'cb'); ?>
                         </td>
