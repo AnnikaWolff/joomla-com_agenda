@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
 
-    <name>COM_AGENDA</name>
+    <name>Agenda</name>
     <!-- The following elements are optional and free of formatting constraints -->
     <creationDate>July 2020</creationDate>
     <author>Team Herogasm</author>
@@ -10,7 +10,7 @@
     <copyright>Haendlerbund AG</copyright>
     <license>MIT License</license>
     <!--  The version string is recorded in the components table -->
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <!-- The description is optional and defaults to the name -->
     <description>COM_AGENDA_DESCRIPTION</description>
 
@@ -43,7 +43,7 @@
 
     <administration>
         <!-- Administration Menu Section -->
-        <menu link='index.php?option=com_agenda'>COM_AGENDA_ADMIN_MENU</menu>
+        <menu link='index.php?option=com_agenda'>Agenda</menu>
         <!-- Administration Main File Copy Section -->
         <!-- Note the folder attribute: This attribute describes the folder
             to copy FROM in the package to install therefore files copied

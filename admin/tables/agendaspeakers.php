@@ -16,6 +16,6 @@ class AgendaTableAgendaSpeakers extends JTable
      */
     function __construct(&$db)
     {
-        parent::__construct('#__nexus_agenda_speaker', 'id', $db);
+        parent::__construct('#__nexus_agenda_speakers', 'id', $db);
     }
 }

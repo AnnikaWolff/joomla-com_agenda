@@ -31,6 +31,15 @@ defined('_JEXEC') or die('Restricted Access');
                     <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_TITLE'); ?>
                 </th>
                 <th>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_COMPANY'); ?>
+                </th>
+                <th>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_HAS_DESC'); ?>
+                </th>
+                <th>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_SPEAKER_HAS_PORTRAIT'); ?>
+                </th>
+                <th>
                     <?php echo JText::_('COM_AGENDA_PUBLISHED'); ?>
                 </th>
             </tr>
@@ -57,6 +66,19 @@ defined('_JEXEC') or die('Restricted Access');
                             <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_AGENDA_EDIT'); ?>">
                                 <?php echo $row->title; ?>
                             </a>
+                        </td>
+                        <td><?php echo $row->company; ?></td>
+                        <td><?php
+                                echo (!empty($row->description) && $row->description !== null)
+                                    ? JText::_('COM_AGENDA_YES')
+                                    : JText::_('COM_AGENDA_NO');
+                            ?>
+                        </td>
+                        <td><?php
+                                echo (!empty($row->portrait) && $row->portrait !== null)
+                                    ? JText::_('COM_AGENDA_YES')
+                                    : JText::_('COM_AGENDA_NO');
+                            ?>
                         </td>
                         <td align="center">
                             <?php echo JHtml::_('jgrid.published', $row->published, $i, 'agenda.', true, 'cb'); ?>

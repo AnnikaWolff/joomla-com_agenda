@@ -14,7 +14,7 @@ class AgendaModelAgendaItem extends JModelAdmin
      *
      * @since   1.6
      */
-    public function getTable($type = 'AgendaItem', $prefix = 'AgendaTable', $config = [])
+    public function getTable($type = 'AgendaItems', $prefix = 'AgendaTable', $config = [])
     {
         return JTable::getInstance($type, $prefix, []);
     }
