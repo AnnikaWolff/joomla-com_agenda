@@ -10,7 +10,7 @@
     <copyright>Haendlerbund AG</copyright>
     <license>MIT License</license>
     <!--  The version string is recorded in the components table -->
-    <version>0.0.9</version>
+    <version>0.0.10</version>
     <!-- The description is optional and defaults to the name -->
     <description>COM_AGENDA_DESCRIPTION</description>
 

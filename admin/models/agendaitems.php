@@ -25,4 +25,6 @@ class AgendaModelAgendaItems extends JModelList
 
         return $query;
     }
+
+
 }

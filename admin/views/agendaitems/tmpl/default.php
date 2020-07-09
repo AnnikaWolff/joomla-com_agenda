@@ -34,7 +34,7 @@ defined('_JEXEC') or die('Restricted Access');
                     <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_SPEAKER'); ?>
                 </th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_PLACE'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_LOCATION'); ?>
                 </th>
                 <th>
                     <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_DAY'); ?>
@@ -70,10 +70,19 @@ defined('_JEXEC') or die('Restricted Access');
                                 <?php echo $row->title; ?>
                             </a>
                         </td>
-                        <td><?php echo $row->speaker; ?></td>
-                        <td><?php echo $row->place; ?></td>
-                        <td><?php echo $row->day; ?></td>
-                        <td><?php echo $row->time; ?></td>
+                        <td><?php echo $this->getSpeaker($row->speaker_id); ?></td>
+                        <td><?php echo $this->getLocation($row->location_id); ?></td>
+                        <td><?php if ($row->day !== '0000-00-00') {
+                                echo date('d.m.Y', strtotime($row->day));
+                            } else {?>
+                                -
+                            <?php } ?>
+                        </td>
+                        <td><?php if ($row->day !== '0000-00-00') {
+                                echo date('H:i', strtotime($row->time)); ?> Uhr <?php
+                            } else {?>
+                                -
+                            <?php } ?></td>
                         <td align="center">
                             <?php echo JHtml::_('jgrid.published', $row->published, $i, 'agenda.', true, 'cb'); ?>
                         </td>

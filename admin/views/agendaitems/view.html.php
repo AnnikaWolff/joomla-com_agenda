@@ -20,8 +20,6 @@ class AgendaViewAgendaItems extends JViewLegacy
      */
     public function display($tpl = null)
     {
-        $this->msg = $this->get('Msg');
-
         // Get data from the model
         $this->items		= $this->get('Items');
         $this->pagination	= $this->get('Pagination');
@@ -52,5 +50,41 @@ class AgendaViewAgendaItems extends JViewLegacy
         JToolbarHelper::addNew('agendaitem.add');
         JToolbarHelper::editList('agendaitem.edit');
         JToolbarHelper::deleteList('Wirklich löschen?', 'agendaitem.delete');
+    }
+
+    public function getSpeaker($id = null)
+    {
+        if ($id) {
+            $db    = JFactory::getDbo();
+            $query = $db->getQuery(true);
+
+            // Create the base select statement.
+            $query->select('title')
+                ->from($db->quoteName('#__nexus_agenda_speakers'))
+                ->where('id = ' . $id);
+            $db->setQuery((string) $query);
+
+            $speakers = $db->loadObjectList();
+            return $speakers[0]->title;
+        }
+        return '-';
+    }
+
+    public function getLocation($id = null)
+    {
+        if ($id) {
+            $db    = JFactory::getDbo();
+            $query = $db->getQuery(true);
+
+            // Create the base select statement.
+            $query->select('title')
+                ->from($db->quoteName('#__nexus_agenda_locations'))
+                ->where('id = ' . $id);
+            $db->setQuery((string) $query);
+
+            $locations = $db->loadObjectList();
+            return $locations[0]->title;
+        }
+        return '-';
     }
 }
