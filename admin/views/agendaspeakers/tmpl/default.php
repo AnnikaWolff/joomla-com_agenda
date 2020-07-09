@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted Access');
                 <li><a href="index.php?option=com_agenda&view=agendaitems"><?php echo JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_ITEMS'); ?></a></li>
             </ul>
             <ul id="submenu" class="nav nav-list">
-                <li><a href="index.php?option=com_agenda&view=agendaplaces"><?php echo JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_PLACES'); ?></a></li>
+                <li><a href="index.php?option=com_agenda&view=agendalocations"><?php echo JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_LOCATIONS'); ?></a></li>
             </ul>
             <ul id="submenu" class="nav nav-list">
                 <li><a href="index.php?option=com_agenda&view=agendaspeakers"><?php echo JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_SPEAKERS'); ?></a></li>

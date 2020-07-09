@@ -26,21 +26,15 @@ defined('_JEXEC') or die('Restricted Access');
             <thead>
             <tr>
                 <th><?php echo JHtml::_('grid.checkall'); ?></th>
-                <th><?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_ID'); ?></th>
+                <th><?php echo JText::_('COM_AGENDA_AGENDA_LOCATION_ID'); ?></th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_TITLE'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_LOCATION_TITLE'); ?>
                 </th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_SPEAKER'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_LOCATION_HAS_DESC'); ?>
                 </th>
                 <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_PLACE'); ?>
-                </th>
-                <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_DAY'); ?>
-                </th>
-                <th>
-                    <?php echo JText::_('COM_AGENDA_AGENDA_ITEMS_TIME'); ?>
+                    <?php echo JText::_('COM_AGENDA_AGENDA_LOCATION_MAP_POSITION'); ?>
                 </th>
                 <th>
                     <?php echo JText::_('COM_AGENDA_PUBLISHED'); ?>
@@ -57,7 +51,7 @@ defined('_JEXEC') or die('Restricted Access');
             <tbody>
             <?php if (! empty($this->items)) : ?>
                 <?php foreach ($this->items as $i => $row) :
-                    $link = JRoute::_('index.php?option=com_agenda&task=agendaitem.edit&id=' . $row->id);
+                    $link = JRoute::_('index.php?option=com_agenda&task=agendalocation.edit&id=' . $row->id);
                     ?>
 
                     <tr>
@@ -70,10 +64,13 @@ defined('_JEXEC') or die('Restricted Access');
                                 <?php echo $row->title; ?>
                             </a>
                         </td>
-                        <td><?php echo $row->speaker; ?></td>
-                        <td><?php echo $row->place; ?></td>
-                        <td><?php echo $row->day; ?></td>
-                        <td><?php echo $row->time; ?></td>
+                        <td><?php
+                                echo (!empty($row->description) && $row->description !== null)
+                                    ? JText::_('COM_AGENDA_YES')
+                                    : JText::_('COM_AGENDA_NO');
+                            ?>
+                        </td>
+                        <td><?php echo $row->map_position; ?></td>
                         <td align="center">
                             <?php echo JHtml::_('jgrid.published', $row->published, $i, 'agenda.', true, 'cb'); ?>
                         </td>
