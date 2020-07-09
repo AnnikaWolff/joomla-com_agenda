@@ -7,7 +7,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class AgendaViewAgenda extends JViewLegacy
+class AgendaViewAgendaItems extends JViewLegacy
 {
     /**
      * Display the main Agenda view

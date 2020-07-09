@@ -6,7 +6,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class AgendaModelAgenda extends JModelList
+class AgendaModelAgendaItems extends JModelList
 {
     /**
      * Method to build an SQL query to load the list data.
