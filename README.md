@@ -10,3 +10,9 @@
 - choose the second tab "Upload package file" and drop your zip file there
 - you should receive a message like "Installation of the component was successful."
 - now visit /administrator/index.php?option=com_agenda&view=agenda
+
+## What it looks like for now
+
+![structure](http://www.plantuml.com/plantuml/png/bP4zImD148Rx_HL3gZlXzABOR1MmKR2pif9nTpI3-x7iJ8H3_E_U9Jc2KG9fTk5zd_bUYMBLJGpcGIaAB9OBkEYwxVzK23-e2bXmEIboad-en-nGEQTVcBaBA08x-iieQo0BdrZT6cjpVTktnfEuocKAFJWtVJzQiYlymju29uMtN8dVKxFNBzct9kpB_e5cOqjv72nuL6gUkzYDWd8a2zFRt5ksqfgoUGqiQ_AJd8OfrVAgDz_p3FCMpX_3vLWm3KS19LUjo7eidsxZiEOp-pYLUaN9ZwV_0G00)
+
+[Code](http://www.plantuml.com/plantuml/uml/bP4zImD148Rx_HL3gZlXzABOR1MmKR2pif9nTpI3-x7iJ8H3_E_U9Jc2KG9fTk5zd_bUYMBLJGpcGIaAB9OBkEYwxVzK23-e2bXmEIboad-en-nGEQTVcBaBA08x-iieQo0BdrZT6cjpVTktnfEuocKAFJWtVJzQiYlymju29uMtN8dVKxFNBzct9kpB_e5cOqjv72nuL6gUkzYDWd8a2zFRt5ksqfgoUGqiQ_AJd8OfrVAgDz_p3FCMpX_3vLWm3KS19LUjo7eidsxZiEOp-pYLUaN9ZwV_0G00)
