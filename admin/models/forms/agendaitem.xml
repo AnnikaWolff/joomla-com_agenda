@@ -22,24 +22,20 @@
                 default=""
         />
         <field
+                addfieldpath="/administrator/components/com_agenda/models/fields"
                 name="speaker_id"
-                type="list"
+                type="speakeroptions"
                 label="COM_AGENDA_AGENDA_ITEMS_SPEAKER"
-        >
-            <option value="0">Speaker 1</option>
-            <option value="1">Speaker 2</option>
-        </field>
+        />
         <field
-                name="place_id"
-                type="list"
-                label="COM_AGENDA_AGENDA_ITEMS_PLACE"
-        >
-            <option value="0">Place 1</option>
-            <option value="1">Place 2</option>
-        </field>
+                addfieldpath="/administrator/components/com_agenda/models/fields"
+                name="location_id"
+                type="locationoptions"
+                label="COM_AGENDA_AGENDA_ITEMS_LOCATION"
+        />
         <field
                 name="day"
-                type="text"
+                type="day"
                 label="COM_AGENDA_AGENDA_ITEMS_DAY"
                 size="40"
                 class="inputbox"
@@ -47,11 +43,11 @@
         />
         <field
                 name="time"
-                type="text"
+                type="time"
                 label="COM_AGENDA_AGENDA_ITEMS_TIME"
-                size="40"
+                min="07:00"
+                max="20:00"
                 class="inputbox"
-                default=""
         />
     </fieldset>
 </form>
