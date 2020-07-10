@@ -49,6 +49,10 @@ class AgendaViewAgendaItems extends JViewLegacy
         JToolbarHelper::title(JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_ITEMS'));
         JToolbarHelper::addNew('agendaitem.add');
         JToolbarHelper::editList('agendaitem.edit');
+        JToolbarHelper::divider();
+        JToolbarHelper::publish('agendaitems.publish', 'JTOOLBAR_PUBLISH', true);
+        JToolbarHelper::custom('agendaitems.overwrittenUnpublish', 'unpublish', 'unpublish', 'JTOOLBAR_UNPUBLISH');
+        JToolbarHelper::divider();
         JToolbarHelper::deleteList(JText::_('COM_AGENDA_AGENDA_ITEMS_DELETE_CONFIRM'), 'agendaitems.delete');
     }
 

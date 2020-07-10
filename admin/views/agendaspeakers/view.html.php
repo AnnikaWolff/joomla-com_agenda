@@ -51,6 +51,10 @@ class AgendaViewAgendaSpeakers extends JViewLegacy
         JToolbarHelper::title(JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_SPEAKERS'));
         JToolbarHelper::addNew('agendaspeaker.add');
         JToolbarHelper::editList('agendaspeaker.edit');
+        JToolbarHelper::divider();
+        JToolbarHelper::publish('agendaspeakers.publish', 'JTOOLBAR_PUBLISH', true);
+        JToolbarHelper::custom('agendaspeakers.overwrittenUnpublish', 'unpublish', 'unpublish', 'JTOOLBAR_UNPUBLISH');
+        JToolbarHelper::divider();
         JToolbarHelper::deleteList(JText::_('COM_AGENDA_AGENDA_SPEAKER_DELETE_CONFIRM'), 'agendaspeakers.delete');
     }
 }
