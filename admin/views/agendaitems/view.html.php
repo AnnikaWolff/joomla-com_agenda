@@ -49,7 +49,7 @@ class AgendaViewAgendaItems extends JViewLegacy
         JToolbarHelper::title(JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_ITEMS'));
         JToolbarHelper::addNew('agendaitem.add');
         JToolbarHelper::editList('agendaitem.edit');
-        JToolbarHelper::deleteList('Wirklich löschen?', 'agendaitem.delete');
+        JToolbarHelper::deleteList(JText::_('COM_AGENDA_AGENDA_ITEMS_DELETE_CONFIRM'), 'agendaitems.delete');
     }
 
     public function getSpeaker($id = null)
