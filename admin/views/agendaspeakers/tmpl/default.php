@@ -80,8 +80,12 @@ defined('_JEXEC') or die('Restricted Access');
                                     : JText::_('COM_AGENDA_NO');
                             ?>
                         </td>
-                        <td align="center">
-                            <?php echo JHtml::_('jgrid.published', $row->published, $i, 'agenda.', true, 'cb'); ?>
+                        <td>
+                            <?php
+                            echo ($row->published)
+                                ? JText::_('COM_AGENDA_YES')
+                                : JText::_('COM_AGENDA_NO');
+                            ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
