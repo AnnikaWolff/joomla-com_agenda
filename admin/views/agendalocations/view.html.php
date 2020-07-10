@@ -51,6 +51,6 @@ class AgendaViewAgendaLocations extends JViewLegacy
         JToolbarHelper::title(JText::_('COM_AGENDA_ADMIN_MANAGE_AGENDA_LOCATIONS'));
         JToolbarHelper::addNew('agendalocation.add');
         JToolbarHelper::editList('agendalocation.edit');
-        JToolbarHelper::deleteList('Wirklich löschen?', 'agendalocation.delete');
+        JToolbarHelper::deleteList(JText::_('COM_AGENDA_AGENDA_LOCATION_DELETE_CONFIRM'), 'agendalocations.delete');
     }
 }

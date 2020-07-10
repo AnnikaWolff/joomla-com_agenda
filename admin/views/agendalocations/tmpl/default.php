@@ -21,7 +21,7 @@ defined('_JEXEC') or die('Restricted Access');
 <div id="j-main-container" class="j-toggle-main j-toggle-transition span10">
     <h1><?php echo $this->viewTitle; ?></h1>
 
-    <form action="index.php?option=com_agenda&view=agendaitems" method="post" id="adminForm" name="adminForm">
+    <form action="index.php?option=com_agenda&view=agendalocations" method="post" id="adminForm" name="adminForm">
         <table class="table table-striped table-hover">
             <thead>
             <tr>

@@ -6,9 +6,9 @@ class AgendaModelAgendaItem extends JModelAdmin
     /**
      * Method to get a table object, load it if necessary.
      *
-     * @param   string  $type    The table name. Optional.
-     * @param   string  $prefix  The class prefix. Optional.
-     * @param   array   $config  Configuration array for model. Optional.
+     * @param string $type   The table name. Optional.
+     * @param string $prefix The class prefix. Optional.
+     * @param array  $config Configuration array for model. Optional.
      *
      * @return  JTable  A JTable object
      *
@@ -22,8 +22,8 @@ class AgendaModelAgendaItem extends JModelAdmin
     /**
      * Method to get the record form.
      *
-     * @param   array    $data      Data for the form.
-     * @param   boolean  $loadData  True if the form is to load its own data (default case), false if not.
+     * @param array   $data     Data for the form.
+     * @param boolean $loadData True if the form is to load its own data (default case), false if not.
      *
      * @return  mixed    A JForm object on success, false on failure
      *
@@ -35,13 +35,12 @@ class AgendaModelAgendaItem extends JModelAdmin
             'com_agenda.agendaitem',
             'agendaitem',
             array(
-                'control' => 'jform',
+                'control'   => 'jform',
                 'load_data' => $loadData
             )
         );
 
-        if (empty($form))
-        {
+        if (empty($form)) {
             echo "No form found";
             return false;
         }
@@ -65,8 +64,7 @@ class AgendaModelAgendaItem extends JModelAdmin
             array()
         );
 
-        if (empty($data))
-        {
+        if (empty($data)) {
             $data = $this->getItem();
         }
 
